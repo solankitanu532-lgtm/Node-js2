@@ -19,7 +19,7 @@ app.use(express.static(path.join(rootDir,'public')))
  
 app.use(errorController.errorPage)
 
-const PORT = 30001;
+const PORT = 3001;
 
 const DB_Path = "mongodb+srv://coding:radhe@completecoding.cqzlbjm.mongodb.net/airbnb?appName=completeCoding"
 

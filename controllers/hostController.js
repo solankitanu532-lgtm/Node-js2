@@ -26,7 +26,6 @@ exports.getHostHomes = (req,res,next)=>{
 
 
 exports.postAddHome = (req,res,next)=>{
-console.log(req.body,req.body.price)
 const{houseName, price, location, rating, photoUrl} = req.body;
 
 const home = new Home({
