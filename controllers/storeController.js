@@ -2,16 +2,21 @@ const Favourite = require('../models/favourite')
 const Home = require('../models/home')
 
 exports.getIndex = (req,res,next)=>{
-    Home.find().then((registeredHomes) => res.render('store/index',{registeredHomes: registeredHomes,  pageTitle: 'airbnb Home',currentPage: 'Index'}))
+    Home.find().then((registeredHomes) => res.render('store/index',{registeredHomes: registeredHomes,  pageTitle: 'airbnb Home',currentPage: 'Index',
+      isLoggedIn: req.isLoggedIn
+    }))
 }
 
 exports.getHomes = (req,res,next)=>{
-   Home.find().then((registeredHomes) => res.render('store/home-list',{registeredHomes: registeredHomes, pageTitle: 'Home List',currentPage: 'Home'}))
+   Home.find().then((registeredHomes) => res.render('store/home-list',{registeredHomes: registeredHomes, pageTitle: 'Home List',currentPage: 'Home',
+      isLoggedIn: req.isLoggedIn
+   }))
 }
 
 exports.getBookings = (req,res,next)=>{
    res.render('store/booking',{pageTitle: 'My Bookings'
-      ,currentPage: 'Bookings'})
+      ,currentPage: 'Bookings',
+   isLoggedIn: req.isLoggedIn})
 }
 
 
@@ -22,7 +27,8 @@ exports.getFavouriteList = (req,res,next)=>{
          const favouriteHome = registeredHomes.filter(home => favourites.includes(home._id.toString()))
          console.log(favouriteHome)
          res.render('store/favourite-list',{favouriteHome: favouriteHome,  pageTitle: 'My Favourite List'
-      ,currentPage: 'Favourite List'})
+      ,currentPage: 'Favourite List',
+   isLoggedIn: req.isLoggedIn})
    })
    })
     
@@ -57,6 +63,8 @@ exports.getHomesDetails = (req,res,next)=>{
          res.redirect("/homes")
       }else
          {
-        res.render('store/home-detail',{home: home, pageTitle:"Home detail",currentPage: 'Home'})}
+        res.render('store/home-detail',{home: home, pageTitle:"Home detail",currentPage: 'Home',
+         isLoggedIn: req.isLoggedIn
+        })}
    })
 }

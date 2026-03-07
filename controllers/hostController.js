@@ -1,7 +1,11 @@
 const Home = require('../models/home')
 
 exports.getAddHome = (req,res,next)=>{
-res.render('host/edit-Home',{pageTitle: 'Add Home to airbnb',currentPage: 'Add Home', editing: false})
+res.render('host/edit-Home',{
+pageTitle: 'Add Home to airbnb',
+currentPage: 'Add Home', editing: false,
+isLoggedIn: req.isLoggedIn
+})
 } 
 
 exports.getEditHome = (req,res,next)=>{
@@ -16,12 +20,15 @@ res.render('host/edit-Home',{
    home: home, 
    pageTitle: 'Edit your home',
    currentPage: 'Host Homes', 
-   editing: editing})
+   editing: editing,
+   isLoggedIn: req.isLoggedIn})
 })
 } 
 
 exports.getHostHomes = (req,res,next)=>{
-   Home.find().then((registeredHomes) => res.render('host/host-home-list',{registeredHomes: registeredHomes, pageTitle: 'Host Homes List',currentPage: 'Host Homes'}))
+   Home.find().then((registeredHomes) => res.render('host/host-home-list',{registeredHomes: registeredHomes, pageTitle: 'Host Homes List',currentPage: 'Host Homes',
+      isLoggedIn: req.isLoggedIn
+   }))
 }
 
 
