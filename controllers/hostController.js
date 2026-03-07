@@ -65,7 +65,7 @@ Home.findById(id).then(home =>{
 
 exports.postDeleteHome = (req,res,next)=>{
 const homeId = req.params.homeId
-Home.findOneAndDelete(homeId).then(()=>{
+Home.findByIdAndDelete(homeId).then(()=>{
    res.redirect('/host/host-home-list')
 })
 

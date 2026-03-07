@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 
 const storeRouter = require('./routes/storeRouter')
+const authRouter = require('./routes/authRouter')
 const hostRouter = require('./routes/hostRouter')
 const rootDir = require('./utils/pathUtils')
 const errorController = require('./controllers/errors')
@@ -13,6 +14,7 @@ app.set('views','views')
 
 app.use(express.urlencoded())
 app.use(storeRouter)
+app.use(authRouter)
 app.use('/host',hostRouter)
 app.use(express.static(path.join(rootDir,'public')))
 
