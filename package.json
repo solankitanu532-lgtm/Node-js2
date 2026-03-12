@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
+    "bcryptjs": "^3.0.3",
     "body-parser": "^2.2.2",
     "connect-mongodb-session": "^5.0.0",
     "ejs": "^4.0.1",

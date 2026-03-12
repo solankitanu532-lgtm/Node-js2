@@ -4,7 +4,8 @@ exports.getAddHome = (req,res,next)=>{
 res.render('host/edit-Home',{
 pageTitle: 'Add Home to airbnb',
 currentPage: 'Add Home', editing: false,
-isLoggedIn: req.isLoggedIn
+isLoggedIn: req.isLoggedIn,
+user: req.session.user,
 })
 } 
 
@@ -21,13 +22,18 @@ res.render('host/edit-Home',{
    pageTitle: 'Edit your home',
    currentPage: 'Host Homes', 
    editing: editing,
-   isLoggedIn: req.isLoggedIn})
+   isLoggedIn: req.isLoggedIn,
+   user: req.session.user,
+})
 })
 } 
 
 exports.getHostHomes = (req,res,next)=>{
-   Home.find().then((registeredHomes) => res.render('host/host-home-list',{registeredHomes: registeredHomes, pageTitle: 'Host Homes List',currentPage: 'Host Homes',
-      isLoggedIn: req.isLoggedIn
+   Home.find().then((registeredHomes) => res.render('host/host-home-list',{registeredHomes: registeredHomes, 
+      pageTitle: 'Host Homes List',
+      currentPage: 'Host Homes',
+      isLoggedIn: req.isLoggedIn,
+      user: req.session.user,
    }))
 }
 
