@@ -1,6 +1,6 @@
 # 🏡 Airbnb Clone 
 
-A full-stack Airbnb-inspired web application built using Node.js and Express.js.  
+A full-stack Airbnb-inspired web application built using Node.js and Express.js and Mongodb to store data.  
 This project replicates core Airbnb features such as property listings, dynamic routing, and server-side rendering.
 
 ---
