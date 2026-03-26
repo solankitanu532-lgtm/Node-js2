@@ -25,6 +25,7 @@ exports.getSignUp = (req, res, next) => {
     });
 }
 
+
 exports.postSignUp = [
     check("firstName")
     .trim()
@@ -144,13 +145,14 @@ exports.postLogin = async(req, res, next) => {
     }
 
     req.session.isLoggedIn = true;
-    req.session.user = user;
-    await req.session.save();
-    res.redirect("/")
+    req.session.user = JSON.parse(JSON.stringify(user));
+    await req.session.save(() => {
+    res.redirect("/");
+  });
 }
 
 exports.postLogout = (req, res, next) => {
-       req.session.destroy(() =>{
+        req.session.destroy(() =>{
        res.redirect("/")
-    }) 
+     }) 
 }
