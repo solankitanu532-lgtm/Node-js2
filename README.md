@@ -63,10 +63,3 @@ Airbnb-Clone/
 
 ---
 
-## 👩‍💻 Author
-
-**Tanu Solanki**  
-BTech – Information Technology  
-Aspiring Software Engineer  
-
-📧 Email: solankitanu564@gmail.com
