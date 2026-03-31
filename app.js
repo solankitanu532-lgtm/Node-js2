@@ -2,8 +2,8 @@ const express = require('express')
 const { default: mongoose } = require('mongoose')
 const session = require('express-session')
 const mongodbStore = require('connect-mongodb-session')(session)
-require('dotenv').config()
-const DB_Path = pocess.env.DB_URL
+require("dotenv").config();
+const DB_Path = process.env.DB_URL;
 
 const path = require('path')
 
