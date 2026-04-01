@@ -1,7 +1,6 @@
 # 🏡 Airbnb Clone 
 
 ## 🚀 Live Demo
-
 Click Here to View Live Project -> https://backend-project-airbnb.onrender.com
 
 A full-stack Airbnb-inspired web application built using Node.js and Express.js and Mongodb to store data.  
@@ -61,7 +60,6 @@ Airbnb-Clone/
 
 - User Authentication 
 - Property Booking System
-- Payment Integration
 - Reviews & Ratings
 - Image Upload Feature
 
